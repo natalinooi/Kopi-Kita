@@ -1,0 +1,11 @@
+{
+  "screenNumber": 11,
+  "id": "13218318340144232782",
+  "title": "image.png (Brand Asset)",
+  "folderName": "11_Brand_Asset_image",
+  "dimensions": "220x118",
+  "files": {
+    "screenshot": "screens/11_Brand_Asset_image/screenshot.png",
+    "flat_screenshot": "images/11_brand_asset_image.png"
+  }
+}

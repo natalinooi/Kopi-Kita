@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- QR Corner 1 -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M15,15 h50 v50 h-50 z M25,25 h30 v30 h-30 z M32,32 h16 v16 h-16 z" />
+    <!-- QR Corner 2 -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M135,15 h50 v50 h-50 z M145,25 h30 v30 h-30 z M152,32 h16 v16 h-16 z" />
+    <!-- QR Corner 3 -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M15,135 h50 v50 h-50 z M25,145 h30 v30 h-30 z M32,152 h16 v16 h-16 z" />
+    <!-- Data Blocks -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M75,20 h15 v15 h-15 z M100,20 h15 v25 h-15 z M75,45 h20 v15 h-20 z M75,75 h50 v15 h-50 z M20,75 h30 v15 h-30 z M20,100 h20 v20 h-20 z M50,100 h35 v15 h-35 z M145,75 h20 v20 h-20 z M140,105 h45 v15 h-45 z M75,135 h20 v20 h-20 z M105,135 h20 v15 h-20 z M105,160 h40 v25 h-40 z M155,140 h30 v45 h-30 z" />
+    <!-- Center Emblem -->
+    <path
+        android:fillColor="#C4823F"
+        android:pathData="M90,90 h20 v20 h-20 z" />
+</vector>

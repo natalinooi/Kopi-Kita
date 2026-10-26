@@ -1,0 +1,159 @@
+{
+  "projectTitle": "KOPI KITA Coffee App Prototype",
+  "projectId": "17482960218964361589",
+  "screenCount": 12,
+  "screens": [
+    {
+      "screenNumber": 1,
+      "id": "1f1b0916e24f4e64bb061c4ec5a81f4e",
+      "title": "KOPI KITA Arch Illustration",
+      "folderName": "01_KOPI_KITA_Arch_Illustration",
+      "dimensions": "100x100",
+      "files": {
+        "screenshot": "screens/01_KOPI_KITA_Arch_Illustration/screenshot.png",
+        "flat_screenshot": "images/01_kopi_kita_arch_illustration.png",
+        "code": "screens/01_KOPI_KITA_Arch_Illustration/code.svg",
+        "flat_code": "code/01_kopi_kita_arch_illustration.svg"
+      }
+    },
+    {
+      "screenNumber": 2,
+      "id": "b175ba923d4d4a39b9aa06c9559dae6e",
+      "title": "Discover & Daily Roast",
+      "folderName": "02_Discover_and_Daily_Roast",
+      "dimensions": "780x3708",
+      "files": {
+        "screenshot": "screens/02_Discover_and_Daily_Roast/screenshot.jpg",
+        "flat_screenshot": "images/02_discover_and_daily_roast.jpg",
+        "code": "screens/02_Discover_and_Daily_Roast/code.html",
+        "flat_code": "code/02_discover_and_daily_roast.html"
+      }
+    },
+    {
+      "screenNumber": 3,
+      "id": "4c0cf3b4fe8f485aa724ca87747a2310",
+      "title": "Slow Bar Menu & Customizer",
+      "folderName": "03_Slow_Bar_Menu_and_Customizer",
+      "dimensions": "780x3116",
+      "files": {
+        "screenshot": "screens/03_Slow_Bar_Menu_and_Customizer/screenshot.png",
+        "flat_screenshot": "images/03_slow_bar_menu_and_customizer.png",
+        "code": "screens/03_Slow_Bar_Menu_and_Customizer/code.html",
+        "flat_code": "code/03_slow_bar_menu_and_customizer.html"
+      }
+    },
+    {
+      "screenNumber": 4,
+      "id": "0e6d6b5ae56e4534a5679f46635c2ad6",
+      "title": "Brew Tray & Order Checkout",
+      "folderName": "04_Brew_Tray_and_Order_Checkout",
+      "dimensions": "780x2430",
+      "files": {
+        "screenshot": "screens/04_Brew_Tray_and_Order_Checkout/screenshot.png",
+        "flat_screenshot": "images/04_brew_tray_and_order_checkout.png",
+        "code": "screens/04_Brew_Tray_and_Order_Checkout/code.html",
+        "flat_code": "code/04_brew_tray_and_order_checkout.html"
+      }
+    },
+    {
+      "screenNumber": 5,
+      "id": "991e5a5421ca4039806a45a78c01a56a",
+      "title": "Roastery Club & Passport",
+      "folderName": "05_Roastery_Club_and_Passport",
+      "dimensions": "780x4156",
+      "files": {
+        "screenshot": "screens/05_Roastery_Club_and_Passport/screenshot.png",
+        "flat_screenshot": "images/05_roastery_club_and_passport.png",
+        "code": "screens/05_Roastery_Club_and_Passport/code.html",
+        "flat_code": "code/05_roastery_club_and_passport.html"
+      }
+    },
+    {
+      "screenNumber": 6,
+      "id": "2b88315456ab495188a0bccf454c8a1d",
+      "title": "Explore & Menu Catalog",
+      "folderName": "06_Explore_and_Menu_Catalog",
+      "dimensions": "780x2406",
+      "files": {
+        "screenshot": "screens/06_Explore_and_Menu_Catalog/screenshot.jpg",
+        "flat_screenshot": "images/06_explore_and_menu_catalog.jpg",
+        "code": "screens/06_Explore_and_Menu_Catalog/code.html",
+        "flat_code": "code/06_explore_and_menu_catalog.html"
+      }
+    },
+    {
+      "screenNumber": 7,
+      "id": "e766363f665147dea639f2153bc00d8b",
+      "title": "Artisanal Studio Photograph - Es Kopi Susu Senja",
+      "folderName": "07_Artisanal_Photo_Es_Kopi_Susu_Senja",
+      "dimensions": "1024x1024",
+      "files": {
+        "screenshot": "screens/07_Artisanal_Photo_Es_Kopi_Susu_Senja/screenshot.png",
+        "flat_screenshot": "images/07_artisanal_photo_es_kopi_susu_senja.png"
+      }
+    },
+    {
+      "screenNumber": 8,
+      "id": "1af0f5139a20490384434519d207c1b0",
+      "title": "KOPI KITA - The Warm Welcome (Onboarding & Login)",
+      "folderName": "08_Onboarding_and_Login",
+      "dimensions": "780x1768",
+      "files": {
+        "screenshot": "screens/08_Onboarding_and_Login/screenshot.jpg",
+        "flat_screenshot": "images/08_onboarding_and_login.jpg",
+        "code": "screens/08_Onboarding_and_Login/code.html",
+        "flat_code": "code/08_onboarding_and_login.html"
+      }
+    },
+    {
+      "screenNumber": 9,
+      "id": "c711741de6ca42efb89a09f86dfa1771",
+      "title": "Product Detail & Cup Customizer",
+      "folderName": "09_Product_Detail_and_Cup_Customizer",
+      "dimensions": "780x1768",
+      "files": {
+        "screenshot": "screens/09_Product_Detail_and_Cup_Customizer/screenshot.png",
+        "flat_screenshot": "images/09_product_detail_and_cup_customizer.png",
+        "code": "screens/09_Product_Detail_and_Cup_Customizer/code.html",
+        "flat_code": "code/09_product_detail_and_cup_customizer.html"
+      }
+    },
+    {
+      "screenNumber": 10,
+      "id": "274434e47bf04fb6b1f998b1c4c11309",
+      "title": "Pesanan & Checkout",
+      "folderName": "10_Pesanan_and_Checkout",
+      "dimensions": "780x2484",
+      "files": {
+        "screenshot": "screens/10_Pesanan_and_Checkout/screenshot.png",
+        "flat_screenshot": "images/10_pesanan_and_checkout.png",
+        "code": "screens/10_Pesanan_and_Checkout/code.html",
+        "flat_code": "code/10_pesanan_and_checkout.html"
+      }
+    },
+    {
+      "screenNumber": 11,
+      "id": "13218318340144232782",
+      "title": "image.png (Brand Asset)",
+      "folderName": "11_Brand_Asset_image",
+      "dimensions": "220x118",
+      "files": {
+        "screenshot": "screens/11_Brand_Asset_image/screenshot.png",
+        "flat_screenshot": "images/11_brand_asset_image.png"
+      }
+    },
+    {
+      "screenNumber": 12,
+      "id": "75750f4800234c6a89c150fd34c0254d",
+      "title": "Logo KOPI KITA",
+      "folderName": "12_Logo_KOPI_KITA",
+      "dimensions": "460x160",
+      "files": {
+        "screenshot": "screens/12_Logo_KOPI_KITA/screenshot.png",
+        "flat_screenshot": "images/12_logo_kopi_kita.png",
+        "code": "screens/12_Logo_KOPI_KITA/code.svg",
+        "flat_code": "code/12_logo_kopi_kita.svg"
+      }
+    }
+  ]
+}

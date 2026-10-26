@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kustomisasi Minuman - KOPI KITA</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Fraunces & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Custom Tailwind Config for Brand System -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            oat: '#F8F5F0',
+            espresso: '#2B170B',
+            mocha: '#7A5C43',
+            muted: '#8C7A6B',
+            cardBorder: '#E8DED1',
+            sage: '#4F6D48',
+            creamCard: '#F6F1EA'
+          },
+          fontFamily: {
+            serif: ['"Fraunces"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 8px 30px rgba(43, 23, 11, 0.06)',
+            'sticky': '0 -4px 20px rgba(43, 23, 11, 0.05)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Scrollbar & Micro Adjustments -->
+<style data-purpose="typography-and-scroll">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #EDE8E1;
+    }
+    .font-editorial {
+      font-family: 'Fraunces', serif;
+    }
+    /* Hide native scrollbar for seamless mobile simulation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-0 sm:py-6 text-espresso antialiased select-none">
+<!-- BEGIN: MobileDeviceFrame -->
+<div class="relative w-full max-w-[390px] h-[844px] bg-oat overflow-hidden shadow-2xl sm:rounded-[44px] border-[1px] border-cardBorder flex flex-col justify-between">
+<!-- BEGIN: iOSStatusBar -->
+<header class="w-full pt-3 px-7 flex justify-between items-center z-30 shrink-0 select-none" data-purpose="ios-status-bar">
+<span class="text-[14px] font-semibold tracking-tight text-espresso">09:41</span>
+<div class="flex items-center space-x-1.5 text-espresso">
+<!-- Cellular Signal Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M1 10.5h2v-2H1v2zm4 0h2v-5H5v5zm4 0h2V3H9v7.5zm4 0h2V0h-2v10.5z"></path>
+</svg>
+<!-- Wifi Icon -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M8 2.5a11.96 11.96 0 017.5 2.66l-1.3 1.57A9.95 9.95 0 008 4.5c-2.45 0-4.68.88-6.2 2.23L.5 5.16A11.96 11.96 0 018 2.5zm0 4c1.7 0 3.25.65 4.4 1.72l-1.34 1.63a4.95 4.95 0 00-6.12 0L3.6 8.22A6.95 6.95 0 018 6.5zm0 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"></path>
+</svg>
+<!-- Battery Icon -->
+<svg class="w-5 h-3 fill-current ml-0.5" viewbox="0 0 24 12">
+<rect fill="none" height="10" rx="3" stroke="currentColor" stroke-width="2" width="19" x="1" y="1"></rect>
+<rect height="6" rx="1.5" width="13" x="3" y="3"></rect>
+<path d="M21 4.5v3a1.5 1.5 0 001.5-1.5v0A1.5 1.5 0 0021 4.5z"></path>
+</svg>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: NavigationBar -->
+<nav class="relative px-5 py-2.5 flex items-center justify-between shrink-0 z-20" data-purpose="top-navigation">
+<!-- Back Button -->
+<button aria-label="Kembali" class="w-10 h-10 rounded-full bg-white/90 border border-cardBorder shadow-sm flex items-center justify-center text-espresso active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5 stroke-[2.2] stroke-current" fill="none" viewbox="0 0 24 24">
+<path d="M15.75 19.5L8.25 12l7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="font-editorial text-[17px] font-bold tracking-tight text-espresso">
+        Kustomisasi Minuman
+      </h1>
+<!-- Favorite Button -->
+<button aria-label="Simpan ke Favorit" class="w-10 h-10 rounded-full bg-white/90 border border-cardBorder shadow-sm flex items-center justify-center text-espresso active:scale-95 transition-transform" type="button">
+<svg class="w-5 h-5 fill-none stroke-current stroke-[2]" viewbox="0 0 24 24">
+<path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</nav>
+<!-- END: NavigationBar -->
+<!-- BEGIN: ScrollableContent -->
+<main class="flex-1 overflow-y-auto no-scrollbar px-5 pb-28 pt-1" data-purpose="customizer-form">
+<!-- BEGIN: HeroProductVisual -->
+<section class="relative flex flex-col items-center mt-2 mb-5" data-purpose="product-visual">
+<!-- Soft Circular Backdrop Accent -->
+<div class="relative w-64 h-64 rounded-full p-2 bg-gradient-to-b from-[#EFE9DF] to-[#F8F5F0] border border-cardBorder/60 shadow-soft flex items-center justify-center">
+<img alt="Artisanal studio photograph of an Indonesian iced coffee drink (Es Kopi Susu Senja) in a clear craft takeaway cup with a branded craft paper sleeve stamped with 'KOPI KITA'. Distinct layered appearance: dark rich espresso crema on top, creamy pasteurized fresh milk in the middle, and rich amber liquid organic palm sugar (gula aren) pooled at the base. Real clear ice cubes visible, gentle condensation droplets on the glass, eco-friendly paper straw, resting on a minimalist warm travertine stone circular pedestal against a warm oat-cream linen backdrop with soft Japandi café morning sunlight and shadows." class="w-full h-full object-cover rounded-full shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZxy-fWZ8FyFpO68_9yw-1c9iTQTR__3bCpaV2oU7JluJWsKEgoP37EPOG1AebgiCAKl0jRFHcFw6gXRYGxxpgV-j2dk2ziKQKFhMWZE52ASwM_dbSbDtShJdiO7DrKW4IFz5kO0doXp-WtsVC2sItGv4XhH7MVbq2uLZJknKVqMpSb1GT6DgyqyLQJ7KnCGxCuOft8qT5_pbVBpYxKSROara0RZqNuPq_W1vhUMhG"/>
+<!-- Recipe Quality Tag -->
+<div class="absolute -bottom-2 right-4 bg-espresso text-oat px-3.5 py-1 rounded-full text-[11px] font-medium tracking-wide uppercase shadow-md flex items-center gap-1.5 border border-white/20">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            Bestseller No. 1
+          </div>
+</div>
+</section>
+<!-- END: HeroProductVisual -->
+<!-- BEGIN: ProductDetailsMeta -->
+<section class="mb-6" data-purpose="product-title-and-pricing">
+<div class="flex justify-between items-start gap-2">
+<div>
+<h2 class="font-editorial text-[24px] font-bold leading-tight text-espresso">
+              Es Kopi Susu Senja
+            </h2>
+<p class="text-[13px] text-muted font-normal mt-1 leading-relaxed">
+              Double shot espresso, susu pasteurisasi, sirup aren organik.
+            </p>
+</div>
+<span class="font-editorial text-[20px] font-bold text-espresso shrink-0 pt-0.5">
+            Rp 18.000
+          </span>
+</div>
+<!-- Social Proof & Provenance Badge -->
+<div class="flex items-center gap-2 mt-3 pt-2.5 border-t border-cardBorder/70">
+<div class="flex items-center bg-white px-2.5 py-1 rounded-md border border-cardBorder text-[12px] font-semibold text-espresso">
+<span class="text-amber-500 mr-1">★</span> 4.9 
+            <span class="text-muted font-normal ml-1">(1.8k)</span>
+</div>
+<div class="flex items-center bg-[#EAE2D7]/50 text-mocha px-2.5 py-1 rounded-md text-[11px] font-medium tracking-tight">
+<svg class="w-3 h-3 mr-1 text-sage fill-current" viewbox="0 0 20 20">
+<path d="M10 2a8 8 0 100 16 8 8 0 000-16zm-1 11.414l-3.707-3.707 1.414-1.414L9 10.586l5.293-5.293 1.414 1.414L9 13.414z"></path>
+</svg>
+            100% Arabica Gayo &amp; Flores
+          </div>
+</div>
+</section>
+<!-- END: ProductDetailsMeta -->
+<!-- Divider -->
+<hr class="border-t border-cardBorder/80 mb-5"/>
+<!-- BEGIN: CupSizeSelector -->
+<section class="mb-6" data-purpose="cup-size-options">
+<div class="flex justify-between items-baseline mb-2.5">
+<h3 class="text-[11px] uppercase tracking-wider font-semibold text-muted">
+            PILIH UKURAN CUP
+          </h3>
+<span class="text-[11px] text-muted">Wajib (Pilih 1)</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Regular Cup (Selected) -->
+<label class="relative flex flex-col p-3 rounded-2xl bg-creamCard border-2 border-espresso cursor-pointer transition-all shadow-sm">
+<input checked="" class="sr-only" name="cup_size" type="radio" value="regular"/>
+<!-- Checkmark Indicator -->
+<div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full bg-espresso flex items-center justify-center text-oat">
+<svg class="w-3 h-3 stroke-[3]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Cup Icon -->
+<div class="w-8 h-8 rounded-lg bg-white/70 flex items-center justify-center mb-2 text-espresso">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6 3h12l-1.5 14a3 3 0 01-3 2.5h-3A3 3 0 017.5 17L6 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M4 3h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="font-bold text-[14px] text-espresso">Regular (12 oz)</span>
+<span class="text-[12px] text-muted mt-0.5">+ Rp 0</span>
+</label>
+<!-- Large Cup (Unselected) -->
+<label class="relative flex flex-col p-3 rounded-2xl bg-white border border-cardBorder cursor-pointer transition-all hover:border-mocha/40">
+<input class="sr-only" name="cup_size" type="radio" value="large"/>
+<!-- Unchecked empty circle -->
+<div class="absolute top-2.5 right-2.5 w-5 h-5 rounded-full border border-cardBorder bg-oat"></div>
+<!-- Taller Cup Icon -->
+<div class="w-8 h-8 rounded-lg bg-oat/70 flex items-center justify-center mb-2 text-muted">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M5.5 2h13l-1.8 17a3 3 0 01-3 2.5h-3.4a3 3 0 01-3-2.5L5.5 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3.5 2h17" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="font-semibold text-[14px] text-espresso">Large (16 oz)</span>
+<span class="text-[12px] text-muted mt-0.5">+ Rp 4.000</span>
+</label>
+</div>
+</section>
+<!-- END: CupSizeSelector -->
+<!-- BEGIN: SweetnessSelector -->
+<section class="mb-5" data-purpose="sweetness-level">
+<h3 class="text-[11px] uppercase tracking-wider font-semibold text-muted mb-2.5">
+          TINGKAT MANIS (SWEETNESS)
+        </h3>
+<div class="grid grid-cols-3 gap-2 bg-white p-1 rounded-xl border border-cardBorder">
+<!-- Normal 100% -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-medium text-mocha cursor-pointer hover:bg-oat transition-colors">
+<input class="sr-only" name="sweetness" type="radio" value="100"/>
+            Normal 100%
+          </label>
+<!-- Less 50% (Selected) -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-semibold bg-espresso text-oat shadow-sm cursor-pointer">
+<input checked="" class="sr-only" name="sweetness" type="radio" value="50"/>
+            Less 50%
+          </label>
+<!-- No Sugar 0% -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-medium text-mocha cursor-pointer hover:bg-oat transition-colors">
+<input class="sr-only" name="sweetness" type="radio" value="0"/>
+            No Sugar 0%
+          </label>
+</div>
+</section>
+<!-- END: SweetnessSelector -->
+<!-- BEGIN: IceLevelSelector -->
+<section class="mb-5" data-purpose="ice-level">
+<h3 class="text-[11px] uppercase tracking-wider font-semibold text-muted mb-2.5">
+          TAKIRAN ES (ICE LEVEL)
+        </h3>
+<div class="grid grid-cols-3 gap-2 bg-white p-1 rounded-xl border border-cardBorder">
+<!-- Normal Ice -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-medium text-mocha cursor-pointer hover:bg-oat transition-colors">
+<input class="sr-only" name="ice" type="radio" value="normal"/>
+            Normal Ice
+          </label>
+<!-- Less Ice (Selected) -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-semibold bg-espresso text-oat shadow-sm cursor-pointer">
+<input checked="" class="sr-only" name="ice" type="radio" value="less"/>
+            Less Ice
+          </label>
+<!-- No Ice -->
+<label class="text-center py-2 px-1 rounded-lg text-[12px] font-medium text-mocha cursor-pointer hover:bg-oat transition-colors flex flex-col items-center justify-center">
+<input class="sr-only" name="ice" type="radio" value="none"/>
+<span>No Ice</span>
+<span class="text-[9px] text-muted opacity-80">+ Rp 2k</span>
+</label>
+</div>
+</section>
+<!-- END: IceLevelSelector -->
+<!-- BEGIN: MilkOptions -->
+<section class="mb-5" data-purpose="milk-choice">
+<h3 class="text-[11px] uppercase tracking-wider font-semibold text-muted mb-2.5">
+          PILIHAN SUSU (DAIRY &amp; PLANT-BASED)
+        </h3>
+<div class="bg-white rounded-2xl border border-cardBorder overflow-hidden divide-y divide-cardBorder/60 shadow-sm">
+<!-- Fresh Milk Option (Default / Checked) -->
+<label class="flex items-center justify-between p-3.5 cursor-pointer hover:bg-creamCard/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full border-2 border-espresso flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-espresso"></div>
+</div>
+<input checked="" class="sr-only" name="milk_option" type="radio" value="fresh_milk"/>
+<div>
+<p class="text-[13px] font-semibold text-espresso">Fresh Milk (Default)</p>
+<p class="text-[11px] text-muted">Standar resep barista pas &amp; creamy</p>
+</div>
+</div>
+<span class="text-[12px] font-medium text-muted">+ Rp 0</span>
+</label>
+<!-- Oatmilk Option (Unchecked) -->
+<label class="flex items-center justify-between p-3.5 cursor-pointer hover:bg-creamCard/40 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-4 h-4 rounded-full border border-cardBorder bg-oat flex items-center justify-center"></div>
+<input class="sr-only" name="milk_option" type="radio" value="oatmilk"/>
+<div>
+<p class="text-[13px] font-semibold text-espresso">Oatmilk (Oatside)</p>
+<p class="text-[11px] text-muted">Creamy plant-based texture, nutty notes</p>
+</div>
+</div>
+<span class="text-[12px] font-semibold text-mocha">+ Rp 6.000</span>
+</label>
+</div>
+</section>
+<!-- END: MilkOptions -->
+<!-- BEGIN: SpecialNotes -->
+<section class="mb-4" data-purpose="special-instructions">
+<label class="block text-[11px] uppercase tracking-wider font-semibold text-muted mb-2" for="order-notes">
+          CATATAN KHUSUS (OPTIONAL)
+        </label>
+<div class="relative">
+<textarea class="w-full text-[13px] bg-white border border-cardBorder rounded-xl p-3 placeholder:text-muted/60 text-espresso focus:ring-1 focus:ring-espresso focus:border-espresso outline-none resize-none transition-all shadow-sm" id="order-notes" placeholder="Contoh: ekstra sedotan kertas, pisah es batu..." rows="2"></textarea>
+</div>
+</section>
+<!-- END: SpecialNotes -->
+</main>
+<!-- END: ScrollableContent -->
+<!-- BEGIN: StickyBottomBar -->
+<footer class="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-cardBorder px-5 pt-3.5 pb-6 shadow-sticky z-30" data-purpose="sticky-bottom-action">
+<div class="flex items-center justify-between gap-4">
+<!-- Total Price Summary -->
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-wider font-medium text-muted">
+            Total Pembayaran
+          </span>
+<span class="font-editorial text-[22px] font-bold tracking-tight text-espresso leading-none mt-1">
+            Rp 18.000
+          </span>
+</div>
+<!-- Add To Cart Primary Button -->
+<button aria-label="Tambah Es Kopi Susu Senja ke Keranjang" class="flex-1 h-[52px] bg-espresso hover:bg-[#3D2211] text-oat font-semibold text-[14px] rounded-full flex items-center justify-center gap-2 shadow-md active:scale-[0.98] transition-transform" type="button">
+<!-- Shopping Bag / Add Icon -->
+<svg class="w-4 h-4 stroke-[2.2] stroke-current" fill="none" viewbox="0 0 24 24">
+<path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Tambah ke Keranjang</span>
+</button>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-32 h-1 bg-espresso/20 rounded-full mx-auto mt-3.5"></div>
+</footer>
+<!-- END: StickyBottomBar -->
+</div>
+<!-- END: MobileDeviceFrame -->
+</body></html>

@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Takeaway Cup Body -->
+    <path
+        android:fillColor="#E8DED1"
+        android:pathData="M16,18 L20,54 C20.5,57 23,59 26,59 L38,59 C41,59 43.5,57 44,54 L48,18 Z" />
+    <!-- Coffee Liquid inside -->
+    <path
+        android:fillColor="#7A5C43"
+        android:pathData="M18.5,30 L20.5,53 C21,55 22.5,56.5 24.5,56.5 L39.5,56.5 C41.5,56.5 43,55 43.5,53 L45.5,30 Z" />
+    <!-- Cup Sleeve band -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M17.5,28 L46.5,28 L45,42 L19,42 Z" />
+    <!-- Sleeve Emblem -->
+    <path
+        android:fillColor="#C4823F"
+        android:pathData="M32,32 C30.3,32 29,33.3 29,35 C29,36.7 30.3,38 32,38 C33.7,38 35,36.7 35,35 C35,33.3 33.7,32 32,32 Z" />
+    <!-- Cup Lid -->
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M14,14 L50,14 C51.1,14 52,14.9 52,16 L52,18 L12,18 L12,16 C12,14.9 12.9,14 14,14 Z" />
+    <path
+        android:fillColor="#2B170B"
+        android:pathData="M24,10 L40,10 C41.1,10 42,10.9 42,12 L42,14 L22,14 L22,12 C22,10.9 22.9,10 24,10 Z" />
+</vector>

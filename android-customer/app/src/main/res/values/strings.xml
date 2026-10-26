@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KOPI KITA</string>
+    <string name="tagline">Roastery &amp; Slow Bar</string>
+    <string name="outlet_name">Sudirman Roastery Hub • Senayan</string>
+    <string name="search_hint">Cari es kopi aren, pour over, bakery...</string>
+    <string name="promo_title">SENJA BUNDLE: Beli 2 Cup Hemat 30%</string>
+    <string name="promo_subtitle">Kombinasi artisanal pour over &amp; iced aren latte segar.</string>
+    <string name="claim_promo">Klaim Kupon (SENJA30)</string>
+    <string name="category_menu">Kategori Menu</string>
+    <string name="view_cart">Lihat Keranjang</string>
+    <string name="add_to_cart">+ Tambah ke Keranjang</string>
+    <string name="order_now">Pesan Sekarang</string>
+    <string name="checkout_title">Konfirmasi &amp; Bayar</string>
+    <string name="order_status_title">Status Pesanan</string>
+</resources>

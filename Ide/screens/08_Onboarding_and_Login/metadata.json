@@ -1,0 +1,13 @@
+{
+  "screenNumber": 8,
+  "id": "1af0f5139a20490384434519d207c1b0",
+  "title": "KOPI KITA - The Warm Welcome (Onboarding & Login)",
+  "folderName": "08_Onboarding_and_Login",
+  "dimensions": "780x1768",
+  "files": {
+    "screenshot": "screens/08_Onboarding_and_Login/screenshot.jpg",
+    "flat_screenshot": "images/08_onboarding_and_login.jpg",
+    "code": "screens/08_Onboarding_and_Login/code.html",
+    "flat_code": "code/08_onboarding_and_login.html"
+  }
+}

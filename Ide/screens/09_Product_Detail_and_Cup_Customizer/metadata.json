@@ -1,0 +1,13 @@
+{
+  "screenNumber": 9,
+  "id": "c711741de6ca42efb89a09f86dfa1771",
+  "title": "Product Detail & Cup Customizer",
+  "folderName": "09_Product_Detail_and_Cup_Customizer",
+  "dimensions": "780x1768",
+  "files": {
+    "screenshot": "screens/09_Product_Detail_and_Cup_Customizer/screenshot.png",
+    "flat_screenshot": "images/09_product_detail_and_cup_customizer.png",
+    "code": "screens/09_Product_Detail_and_Cup_Customizer/code.html",
+    "flat_code": "code/09_product_detail_and_cup_customizer.html"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "screenNumber": 1,
+  "id": "1f1b0916e24f4e64bb061c4ec5a81f4e",
+  "title": "KOPI KITA Arch Illustration",
+  "folderName": "01_KOPI_KITA_Arch_Illustration",
+  "dimensions": "100x100",
+  "files": {
+    "screenshot": "screens/01_KOPI_KITA_Arch_Illustration/screenshot.png",
+    "flat_screenshot": "images/01_kopi_kita_arch_illustration.png",
+    "code": "screens/01_KOPI_KITA_Arch_Illustration/code.svg",
+    "flat_code": "code/01_kopi_kita_arch_illustration.svg"
+  }
+}

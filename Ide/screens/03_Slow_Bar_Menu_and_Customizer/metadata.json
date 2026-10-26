@@ -1,0 +1,13 @@
+{
+  "screenNumber": 3,
+  "id": "4c0cf3b4fe8f485aa724ca87747a2310",
+  "title": "Slow Bar Menu & Customizer",
+  "folderName": "03_Slow_Bar_Menu_and_Customizer",
+  "dimensions": "780x3116",
+  "files": {
+    "screenshot": "screens/03_Slow_Bar_Menu_and_Customizer/screenshot.png",
+    "flat_screenshot": "images/03_slow_bar_menu_and_customizer.png",
+    "code": "screens/03_Slow_Bar_Menu_and_Customizer/code.html",
+    "flat_code": "code/03_slow_bar_menu_and_customizer.html"
+  }
+}

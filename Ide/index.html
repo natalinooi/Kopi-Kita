@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-[#18120C] text-[#F4EADB]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOPI KITA - Prototype Screen Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              espresso: '#2B170B',
+              dark: '#1C120C',
+              card: '#241810',
+              border: '#3B291D',
+              caramel: '#C28E58',
+              gold: '#DFB07A',
+              crema: '#EAD7C2',
+              cream: '#F4EADB',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(36, 24, 16, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(194, 142, 88, 0.2);
+    }
+    .hover-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(194, 142, 88, 0.15);
+      border-color: rgba(194, 142, 88, 0.45);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #18120C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3B291D;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C28E58;
+    }
+  </style>
+</head>
+<body class="min-h-full font-sans antialiased bg-[#140E0A] selection:bg-brand-caramel selection:text-brand-dark">
+
+  <!-- Header Banner -->
+  <header class="border-b border-brand-border bg-[#1C120C]/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex items-center space-x-4">
+        <div class="w-12 h-12 rounded-xl bg-brand-caramel/20 border border-brand-caramel/40 flex items-center justify-center text-brand-gold shadow-inner">
+          <span class="material-symbols-outlined text-28">local_cafe</span>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs uppercase font-semibold tracking-widest text-brand-caramel">Stitch Mobile Prototype</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">12 Aset Lengkap</span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-serif font-bold text-brand-cream">KOPI KITA Coffee App Prototype</h1>
+        </div>
+      </div>
+      
+      <div class="flex items-center space-x-3 text-xs">
+        <div class="px-3 py-1.5 rounded-lg bg-brand-card border border-brand-border text-brand-crema/80">
+          Project ID: <span class="font-mono text-brand-gold font-semibold">17482960218964361589</span>
+        </div>
+        <a href="README.md" class="px-3 py-1.5 rounded-lg bg-brand-caramel text-brand-dark font-semibold hover:bg-brand-gold transition flex items-center space-x-1">
+          <span class="material-symbols-outlined text-[16px]">menu_book</span>
+          <span>README.md</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero & Controls -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div class="p-6 sm:p-8 rounded-2xl glass-panel relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-72 h-72 rounded-full bg-brand-caramel/10 blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl space-y-3">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-cream">
+          Koleksi Screen & Kode Prototype Siap Pakai
+        </h2>
+        <p class="text-sm sm:text-base text-brand-crema/75 leading-relaxed">
+          Seluruh 12 layar dan visual assets telah diunduh lengkap dari Stitch API ke folder lokal 
+          <code class="px-2 py-0.5 bg-black/40 rounded text-brand-gold font-mono text-xs">D:\. Pelajaran\KK\KIK\APK dari Prototipe</code>. 
+          Anda dapat langsung menguji file HTML interaktif di browser atau mengintegrasikannya ke proyek build APK (Cordova, Capacitor, Flutter WebView).
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-3 rounded-xl bg-black/30 border border-brand-border">
+            <div class="text-2xl font-serif font-bold text-brand-gold">12</div>
+            <div class="text-xs text-brand-crema/60">Total Aset</div>
+          </div>
+          <div class="p-3 rounded-xl bg-black/30 border border-brand-border">
+            <div class="text-2xl font-serif font-bold text-emerald-400">8</div>
+            <div class="text-xs text-brand-crema/60">Layar HTML Mobile</div>
+          </div>
+          <div class="p-3 rounded-xl bg-black/30 border border-brand-border">
+            <div class="text-2xl font-serif font-bold text-cyan-400">2</div>
+            <div class="text-xs text-brand-crema/60">Vektor SVG</div>
+          </div>
+          <div class="p-3 rounded-xl bg-black/30 border border-brand-border">
+            <div class="text-2xl font-serif font-bold text-amber-400">2</div>
+            <div class="text-xs text-brand-crema/60">Visual & Foto HD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center space-x-2">
+        <button onclick="filterScreens('all')" id="btn-all" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-caramel text-brand-dark transition">
+          Semua (12)
+        </button>
+        <button onclick="filterScreens('screen')" id="btn-screen" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-card text-brand-crema hover:bg-brand-border transition border border-brand-border">
+          Layar Aplikasi (8)
+        </button>
+        <button onclick="filterScreens('asset')" id="btn-asset" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-card text-brand-crema hover:bg-brand-border transition border border-brand-border">
+          Logo & Ilustrasi (4)
+        </button>
+      </div>
+
+      <div class="text-xs text-brand-crema/60">
+        Klik kartu untuk membuka screenshot / live HTML prototype
+      </div>
+    </div>
+
+    <!-- Grid of Screens -->
+    <div id="screens-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Screen 1: KOPI KITA Arch Illustration -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="asset">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              #01 · SVG Vektor
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">100 x 100</span>
+          </div>
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-center justify-center p-4">
+            <img src="images/01_kopi_kita_arch_illustration.png" alt="KOPI KITA Arch Illustration" class="max-h-full object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">KOPI KITA Arch Illustration</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Ilustrasi arch minimalis Japandi kopi dingin artisanal dengan biji kopi dan ornamen daun.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 1f1b0916e24f4e64bb061c4ec5a81f4e</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/01_kopi_kita_arch_illustration.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Gambar</span>
+          </a>
+          <a href="code/01_kopi_kita_arch_illustration.svg" target="_blank" class="px-3 py-2 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 border border-cyan-500/30 text-center text-xs font-semibold transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">code</span>
+            <span>Buka SVG</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 2: Discover & Daily Roast -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #02 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 3708</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/02_discover_and_daily_roast.jpg" alt="Discover & Daily Roast" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Discover & Daily Roast</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Halaman beranda utama dengan rekomendasi seduhan harian, penawaran roastery, dan kurasi biji kopi.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: b175ba923d4d4a39b9aa06c9559dae6e</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/02_discover_and_daily_roast.jpg" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/02_discover_and_daily_roast.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 3: Slow Bar Menu & Customizer -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #03 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 3116</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/03_slow_bar_menu_and_customizer.png" alt="Slow Bar Menu & Customizer" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Slow Bar Menu & Customizer</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Menu racikan Pour Over Slow Bar lengkap dengan custom filter, origin profile, dan suhu seduhan.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 4c0cf3b4fe8f485aa724ca87747a2310</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/03_slow_bar_menu_and_customizer.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/03_slow_bar_menu_and_customizer.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 4: Brew Tray & Order Checkout -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #04 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 2430</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/04_brew_tray_and_order_checkout.png" alt="Brew Tray & Order Checkout" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Brew Tray & Order Checkout</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Keranjang nampan pesanan interaktif dengan ringkasan harga, voucher roastery, dan opsi pickup/dine-in.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 0e6d6b5ae56e4534a5679f46635c2ad6</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/04_brew_tray_and_order_checkout.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/04_brew_tray_and_order_checkout.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 5: Roastery Club & Passport -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #05 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 4156</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/05_roastery_club_and_passport.png" alt="Roastery Club & Passport" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Roastery Club & Passport</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Kartu keanggotaan loyalitas, pengumpulan stempel origin kopi nusantara, poin bean, dan reward eksklusif.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 991e5a5421ca4039806a45a78c01a56a</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/05_roastery_club_and_passport.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/05_roastery_club_and_passport.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 6: Explore & Menu Catalog -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #06 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 2406</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/06_explore_and_menu_catalog.jpg" alt="Explore & Menu Catalog" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Explore & Menu Catalog</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Katalog lengkap espresso, cold brews, artisanal pastry, dan biji kopi sangrai berdasarkan origin.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 2b88315456ab495188a0bccf454c8a1d</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/06_explore_and_menu_catalog.jpg" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/06_explore_and_menu_catalog.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 7: Artisanal Studio Photograph -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="asset">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              #07 · Foto Studio HD
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">1024 x 1024</span>
+          </div>
+          <div class="relative aspect-square rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-center justify-center">
+            <img src="images/07_artisanal_photo_es_kopi_susu_senja.png" alt="Es Kopi Susu Senja" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Es Kopi Susu Senja</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Foto studio artisanal minuman signature Es Kopi Susu Senja di atas batu travertine dengan pencahayaan pagi Japandi.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: e766363f665147dea639f2153bc00d8b</div>
+        </div>
+        <div class="pt-2 border-t border-brand-border/60">
+          <a href="images/07_artisanal_photo_es_kopi_susu_senja.png" target="_blank" class="w-full px-3 py-2 rounded-lg bg-brand-caramel/20 hover:bg-brand-caramel/30 text-brand-gold border border-brand-caramel/30 font-semibold text-center text-xs transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            <span>Buka Foto HD (1024x1024)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 8: Onboarding & Login -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #08 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 1768</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/08_onboarding_and_login.jpg" alt="Onboarding & Login" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">The Warm Welcome (Login)</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Layar autentikasi sambutan bernuansa hangat dengan formulir email, password toggle interaktif, dan seal single origin.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 1af0f5139a20490384434519d207c1b0</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/08_onboarding_and_login.jpg" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/08_onboarding_and_login.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 9: Product Detail & Cup Customizer -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #09 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 1768</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/09_product_detail_and_cup_customizer.png" alt="Product Detail & Cup Customizer" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Product Detail & Customizer</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Halaman detail produk dengan pemilih ukuran cup, takaran es, tingkat manis gula aren, dan tambahan espresso shot.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: c711741de6ca42efb89a09f86dfa1771</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/09_product_detail_and_cup_customizer.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/09_product_detail_and_cup_customizer.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 10: Pesanan & Checkout -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="screen">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              #10 · Mobile HTML
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">780 x 2484</span>
+          </div>
+          <div class="relative h-64 rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-start justify-center">
+            <img src="images/10_pesanan_and_checkout.png" alt="Pesanan & Checkout" class="w-full object-cover object-top group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Pesanan & Checkout</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Alur pembayaran pesanan dengan integrasi QRIS, e-wallet, instruksi barista catatan khusus, dan rincian pajak.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 274434e47bf04fb6b1f998b1c4c11309</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/10_pesanan_and_checkout.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Screenshot</span>
+          </a>
+          <a href="code/10_pesanan_and_checkout.html" target="_blank" class="px-3 py-2 rounded-lg bg-brand-caramel hover:bg-brand-gold text-brand-dark font-bold text-center text-xs transition flex items-center justify-center space-x-1 shadow">
+            <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+            <span>Live Screen</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 11: Brand Asset image -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="asset">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              #11 · Brand Asset
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">220 x 118</span>
+          </div>
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-black/40 border border-brand-border/60 mb-4 flex items-center justify-center p-4">
+            <img src="images/11_brand_asset_image.png" alt="Brand Asset image.png" class="max-h-full object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">image.png (Brand Asset)</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Logo dan visual asset pendukung untuk branding aplikasi mobile KOPI KITA.</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 13218318340144232782</div>
+        </div>
+        <div class="pt-2 border-t border-brand-border/60">
+          <a href="images/11_brand_asset_image.png" target="_blank" class="w-full px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-brand-crema font-semibold text-center text-xs transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            <span>Buka Gambar</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Screen 12: Logo KOPI KITA -->
+      <div class="screen-card group p-5 rounded-2xl bg-brand-card border border-brand-border transition duration-300 hover-card flex flex-col justify-between" data-type="asset">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              #12 · Logo Vektor SVG
+            </span>
+            <span class="text-[11px] font-mono text-brand-crema/60">460 x 160</span>
+          </div>
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-white/95 border border-brand-border/60 mb-4 flex items-center justify-center p-4">
+            <img src="images/12_logo_kopi_kita.png" alt="Logo KOPI KITA" class="max-h-full object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <h3 class="font-serif font-bold text-lg text-brand-cream mb-1">Logo KOPI KITA</h3>
+          <p class="text-xs text-brand-crema/70 line-clamp-2 mb-3">Official vector brand identity logo dengan tipografi artisanal "KOPI KITA - Roastery & Slow Bar".</p>
+          <div class="text-[10px] font-mono text-brand-crema/50 mb-4">ID: 75750f4800234c6a89c150fd34c0254d</div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-brand-border/60">
+          <a href="images/12_logo_kopi_kita.png" target="_blank" class="px-3 py-2 rounded-lg bg-black/40 hover:bg-black/60 text-center text-xs font-semibold text-brand-crema transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">image</span>
+            <span>Raster</span>
+          </a>
+          <a href="code/12_logo_kopi_kita.svg" target="_blank" class="px-3 py-2 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 border border-cyan-500/30 text-center text-xs font-semibold transition flex items-center justify-center space-x-1">
+            <span class="material-symbols-outlined text-[14px]">code</span>
+            <span>Vektor SVG</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="mt-16 border-t border-brand-border py-8 text-center text-xs text-brand-crema/50 bg-[#100B07]">
+    KOPI KITA Coffee App Prototype · Downloaded via Stitch MCP & API · Local Repository Explorer
+  </footer>
+
+  <script>
+    function filterScreens(type) {
+      const cards = document.querySelectorAll('.screen-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-caramel', 'text-brand-dark');
+        btn.classList.add('bg-brand-card', 'text-brand-crema');
+      });
+
+      const activeBtn = document.getElementById('btn-' + type);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-brand-card', 'text-brand-crema');
+        activeBtn.classList.add('bg-brand-caramel', 'text-brand-dark');
+      }
+
+      cards.forEach(card => {
+        if (type === 'all' || card.getAttribute('data-type') === type) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

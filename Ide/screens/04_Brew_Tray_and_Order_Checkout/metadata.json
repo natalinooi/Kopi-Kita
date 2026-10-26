@@ -1,0 +1,13 @@
+{
+  "screenNumber": 4,
+  "id": "0e6d6b5ae56e4534a5679f46635c2ad6",
+  "title": "Brew Tray & Order Checkout",
+  "folderName": "04_Brew_Tray_and_Order_Checkout",
+  "dimensions": "780x2430",
+  "files": {
+    "screenshot": "screens/04_Brew_Tray_and_Order_Checkout/screenshot.png",
+    "flat_screenshot": "images/04_brew_tray_and_order_checkout.png",
+    "code": "screens/04_Brew_Tray_and_Order_Checkout/code.html",
+    "flat_code": "code/04_brew_tray_and_order_checkout.html"
+  }
+}

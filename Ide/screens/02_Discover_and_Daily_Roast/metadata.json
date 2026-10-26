@@ -1,0 +1,13 @@
+{
+  "screenNumber": 2,
+  "id": "b175ba923d4d4a39b9aa06c9559dae6e",
+  "title": "Discover & Daily Roast",
+  "folderName": "02_Discover_and_Daily_Roast",
+  "dimensions": "780x3708",
+  "files": {
+    "screenshot": "screens/02_Discover_and_Daily_Roast/screenshot.jpg",
+    "flat_screenshot": "images/02_discover_and_daily_roast.jpg",
+    "code": "screens/02_Discover_and_Daily_Roast/code.html",
+    "flat_code": "code/02_discover_and_daily_roast.html"
+  }
+}

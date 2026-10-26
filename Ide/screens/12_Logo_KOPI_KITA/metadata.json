@@ -1,0 +1,13 @@
+{
+  "screenNumber": 12,
+  "id": "75750f4800234c6a89c150fd34c0254d",
+  "title": "Logo KOPI KITA",
+  "folderName": "12_Logo_KOPI_KITA",
+  "dimensions": "460x160",
+  "files": {
+    "screenshot": "screens/12_Logo_KOPI_KITA/screenshot.png",
+    "flat_screenshot": "images/12_logo_kopi_kita.png",
+    "code": "screens/12_Logo_KOPI_KITA/code.svg",
+    "flat_code": "code/12_logo_kopi_kita.svg"
+  }
+}

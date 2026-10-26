@@ -1,0 +1,13 @@
+{
+  "screenNumber": 6,
+  "id": "2b88315456ab495188a0bccf454c8a1d",
+  "title": "Explore & Menu Catalog",
+  "folderName": "06_Explore_and_Menu_Catalog",
+  "dimensions": "780x2406",
+  "files": {
+    "screenshot": "screens/06_Explore_and_Menu_Catalog/screenshot.jpg",
+    "flat_screenshot": "images/06_explore_and_menu_catalog.jpg",
+    "code": "screens/06_Explore_and_Menu_Catalog/code.html",
+    "flat_code": "code/06_explore_and_menu_catalog.html"
+  }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Visual Design System & Earth-Tone Theme -->
+    <color name="colorPrimary">#2B170B</color>
+    <color name="colorDarkRoast">#2B170B</color>
+    <color name="colorSecondary">#7A5C43</color>
+    <color name="colorWarmMocha">#7A5C43</color>
+    <color name="colorBackground">#F8F5F0</color>
+    <color name="colorOatCream">#F8F5F0</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBorder">#E8DED1</color>
+    <color name="colorBeige">#E8DED1</color>
+    <color name="colorTextPrimary">#2B170B</color>
+    <color name="colorTextMuted">#8C7A6B</color>
+    <color name="colorSuccess">#4F6D48</color>
+    <color name="colorSageGreen">#4F6D48</color>
+    <color name="colorAmber">#C4823F</color>
+    <color name="colorSand">#EDE5DB</color>
+    <color name="colorSandLight">#F5EEE5</color>
+    <color name="colorError">#B00020</color>
+</resources>

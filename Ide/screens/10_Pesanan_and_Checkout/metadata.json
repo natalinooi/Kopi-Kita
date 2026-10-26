@@ -1,0 +1,13 @@
+{
+  "screenNumber": 10,
+  "id": "274434e47bf04fb6b1f998b1c4c11309",
+  "title": "Pesanan & Checkout",
+  "folderName": "10_Pesanan_and_Checkout",
+  "dimensions": "780x2484",
+  "files": {
+    "screenshot": "screens/10_Pesanan_and_Checkout/screenshot.png",
+    "flat_screenshot": "images/10_pesanan_and_checkout.png",
+    "code": "screens/10_Pesanan_and_Checkout/code.html",
+    "flat_code": "code/10_pesanan_and_checkout.html"
+  }
+}

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F5EFEB;
+  --foreground: #2B170B;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Minimalist Warm Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5EFEB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CCBE;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7A5C43;
+}
+
+/* Subtle Pulsing for Live Kanban Brewing */
+@keyframes warm-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(196, 130, 63, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(196, 130, 63, 0);
+  }
+}
+
+.animate-warm-pulse {
+  animation: warm-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Print Styles for Cashier Thermal Struk Receipt */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt, #thermal-receipt * {
+    visibility: visible;
+  }
+  #thermal-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    background: white;
+    color: black;
+    box-shadow: none !important;
+  }
+}

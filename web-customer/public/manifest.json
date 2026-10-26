@@ -1,0 +1,21 @@
+{
+  "name": "KOPI KITA Web Order",
+  "short_name": "KopiKita",
+  "description": "Pesan kopi artisanal favoritmu langsung dari genggaman tanpa antre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F5F0",
+  "theme_color": "#2B170B",
+  "icons": [
+    {
+      "src": "/images/12_logo_kopi_kita.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/12_logo_kopi_kita.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

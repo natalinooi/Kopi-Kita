@@ -1,0 +1,13 @@
+{
+  "screenNumber": 5,
+  "id": "991e5a5421ca4039806a45a78c01a56a",
+  "title": "Roastery Club & Passport",
+  "folderName": "05_Roastery_Club_and_Passport",
+  "dimensions": "780x4156",
+  "files": {
+    "screenshot": "screens/05_Roastery_Club_and_Passport/screenshot.png",
+    "flat_screenshot": "images/05_roastery_club_and_passport.png",
+    "code": "screens/05_Roastery_Club_and_Passport/code.html",
+    "flat_code": "code/05_roastery_club_and_passport.html"
+  }
+}

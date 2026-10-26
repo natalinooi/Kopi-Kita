@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" width="100%" height="100%">
+  <defs>
+    <clipPath id="archClip">
+      <path d="M 40 280 L 40 120 A 120 120 0 0 1 280 120 L 280 280 Z" />
+    </clipPath>
+    <linearGradient id="warmBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFE6DA" />
+      <stop offset="100%" stop-color="#E2D4C3" />
+    </linearGradient>
+    <linearGradient id="coffeeGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7A5C43" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#2B170B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Arch Frame Background -->
+  <g clip-path="url(#archClip)">
+    <rect x="0" y="0" width="320" height="280" fill="url(#warmBg)" />
+    <!-- Sun / Glow circle in background -->
+    <circle cx="160" cy="110" r="70" fill="#DFCDBB" opacity="0.6" />
+    
+    <!-- Decorative background ripples -->
+    <circle cx="160" cy="110" r="95" fill="none" stroke="#D1BEA9" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="160" cy="110" r="115" fill="none" stroke="#D1BEA9" stroke-width="1" opacity="0.5" />
+    
+    <!-- Elegant Steam / Aroma Ribbons -->
+    <path d="M 145 95 Q 140 75 148 60 T 144 40" fill="none" stroke="#8C7A6B" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+    <path d="M 160 90 Q 165 70 158 52 T 163 32" fill="none" stroke="#8C7A6B" stroke-width="2.5" stroke-linecap="round" opacity="0.75" />
+    <path d="M 175 95 Q 180 78 172 62 T 178 45" fill="none" stroke="#8C7A6B" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Minimalist Glass / Cold Brew Cup -->
+    <!-- Glass Rim -->
+    <ellipse cx="160" cy="115" rx="42" ry="7" fill="#FFFFFF" stroke="#2B170B" stroke-width="2.5" />
+    <!-- Glass Body -->
+    <path d="M 120 116 L 128 220 A 18 18 0 0 0 146 235 L 174 235 A 18 18 0 0 0 192 220 L 200 116 Z" fill="#F8F5F0" stroke="#2B170B" stroke-width="2.5" />
+    <!-- Coffee Liquid inside -->
+    <path d="M 124 135 L 130 215 A 14 14 0 0 0 144 227 L 176 227 A 14 14 0 0 0 190 215 L 196 135 Q 160 142 124 135 Z" fill="url(#coffeeGradient)" />
+    <!-- Milk swirl / Foam gradient -->
+    <path d="M 124 135 Q 145 148 165 137 T 196 135 Q 192 150 178 152 Q 155 155 140 148 Q 128 142 124 135 Z" fill="#F4EADB" opacity="0.85" />
+    
+    <!-- Ice Cubes floating -->
+    <rect x="142" y="142" width="22" height="22" rx="4" transform="rotate(12 153 153)" fill="#FFFFFF" fill-opacity="0.35" stroke="#FFFFFF" stroke-width="1.5" />
+    <rect x="162" y="152" width="20" height="20" rx="4" transform="rotate(-8 172 162)" fill="#FFFFFF" fill-opacity="0.3" stroke="#FFFFFF" stroke-width="1.5" />
+
+    <!-- Glass condensation & shine highlights -->
+    <path d="M 132 138 L 137 210" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.6" />
+    
+    <!-- Clear Straw -->
+    <line x1="172" y1="75" x2="152" y2="210" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" opacity="0.7" />
+    <line x1="172" y1="75" x2="152" y2="210" stroke="#2B170B" stroke-width="1.5" stroke-linecap="round" opacity="0.4" />
+  </g>
+
+  <!-- Arch Border Stroke -->
+  <path d="M 40 280 L 40 120 A 120 120 0 0 1 280 120 L 280 280" fill="none" stroke="#E8DED1" stroke-width="2.5" />
+
+  <!-- Artisanal Coffee Beans Accents -->
+  <g transform="translate(48, 195) rotate(-22)">
+    <ellipse cx="14" cy="9" rx="12" ry="8" fill="#7A5C43" stroke="#2B170B" stroke-width="1.5" />
+    <path d="M 4 9 Q 14 13 24 9" fill="none" stroke="#2B170B" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+  <g transform="translate(255, 175) rotate(26)">
+    <ellipse cx="14" cy="9" rx="11" ry="7.5" fill="#2B170B" />
+    <path d="M 5 9 Q 14 5 23 9" fill="none" stroke="#E8DED1" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+  <g transform="translate(268, 225) rotate(-15)">
+    <ellipse cx="10" cy="7" rx="9" ry="6" fill="#7A5C43" stroke="#2B170B" stroke-width="1.2" />
+    <path d="M 2 7 Q 10 10 18 7" fill="none" stroke="#2B170B" stroke-width="1.2" stroke-linecap="round" />
+  </g>
+
+  <!-- Botanical foliage flourish -->
+  <path d="M 32 245 Q 48 230 55 210" fill="none" stroke="#4F6D48" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M 46 226 Q 38 220 40 214 Q 46 215 48 223" fill="#4F6D48" />
+  <path d="M 52 215 Q 60 210 58 204 Q 52 205 51 213" fill="#4F6D48" />
+</svg>
