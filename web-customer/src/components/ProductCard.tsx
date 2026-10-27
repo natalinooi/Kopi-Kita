@@ -11,6 +11,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onSelect }: ProductCardProps) {
+  const [imgError, setImgError] = React.useState(false);
+
   return (
     <article
       onClick={() => onSelect(product)}
@@ -18,11 +20,13 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
     >
       {/* Product Image */}
       <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-kopi-sand/30 mb-2.5">
-        {product.image_url ? (
+        {product.image_url && !imgError ? (
           <Image
             src={product.image_url}
             alt={product.name}
             fill
+            unoptimized
+            onError={() => setImgError(true)}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 480px) 50vw, 200px"
           />

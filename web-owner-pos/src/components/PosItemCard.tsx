@@ -68,6 +68,7 @@ export default function PosItemCard({ product, onAddToCart }: PosItemCardProps) 
               src={product.image_url}
               alt={product.name}
               fill
+              unoptimized
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, 25vw"
             />
