@@ -47,62 +47,58 @@ export default function OrderStatusPage() {
   const [order, setOrder] = useState<CustomerOrder | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch initial order
+  // Fetch order and setup realtime
   useEffect(() => {
+    let channel: ReturnType<typeof supabase.channel> | null = null;
+
     const fetchOrder = async () => {
-      setLoading(true);
-      let found: CustomerOrder | null = null;
-
-      if (orderId === 'latest') {
-        if (typeof window !== 'undefined') {
-          const stored: CustomerOrder[] = JSON.parse(localStorage.getItem('kopikita_orders') || '[]');
-          if (stored.length > 0) {
-            found = stored[0];
-          }
-        }
-      } else {
-        found = await getOrderById(orderId);
+      let found = await getOrderById(orderId);
+      if (!found && orderId === 'latest') {
+        found = await getOrderById('latest');
       }
-
       setOrder(found);
       setLoading(false);
 
       if (found?.status === 'siap_diambil') {
         triggerConfetti();
       }
+
+      // Setup Realtime if not yet set up and we have a valid order UUID
+      if (isSupabaseConfigured && found?.id && !channel) {
+        try {
+          channel = supabase
+            .channel(`customer-order-${found.id}`)
+            .on(
+              'postgres_changes',
+              {
+                event: 'UPDATE',
+                schema: 'public',
+                table: 'orders',
+                filter: `id=eq.${found.id}`,
+              },
+              (payload) => {
+                if (payload.new) {
+                  const nextStatus = payload.new.status as OrderStatus;
+                  setOrder((prev) => (prev ? { ...prev, status: nextStatus } : null));
+                  if (nextStatus === 'siap_diambil') {
+                    triggerConfetti();
+                  }
+                }
+              }
+            )
+            .subscribe();
+        } catch (err) {
+          console.warn('Realtime channel error:', err);
+        }
+      }
     };
 
     fetchOrder();
 
-    // Supabase Realtime Listener on public.orders for this orderId
-    let channel: ReturnType<typeof supabase.channel> | null = null;
-    if (isSupabaseConfigured && orderId) {
-      try {
-        channel = supabase
-          .channel(`customer-order-${orderId}`)
-          .on(
-            'postgres_changes',
-            {
-              event: 'UPDATE',
-              schema: 'public',
-              table: 'orders',
-              filter: `id=eq.${orderId}`,
-            },
-            (payload) => {
-              if (payload.new) {
-                const nextStatus = payload.new.status as OrderStatus;
-                setOrder((prev) => (prev ? { ...prev, status: nextStatus } : null));
-                if (nextStatus === 'siap_diambil') {
-                  triggerConfetti();
-                }
-              }
-            }
-          )
-          .subscribe();
-      } catch (err) {
-        console.warn('Realtime channel error:', err);
-      }
-    }
+    // Polling interval every 5s to guarantee status sync even if websocket drops
+    const pollInterval = setInterval(() => {
+      fetchOrder();
+    }, 5000);
 
     // Local storage cross-tab update listener
     const handleStorageUpdate = () => {
@@ -111,6 +107,7 @@ export default function OrderStatusPage() {
     window.addEventListener('kopikita_state_updated', handleStorageUpdate);
 
     return () => {
+      clearInterval(pollInterval);
       if (channel) supabase.removeChannel(channel);
       window.removeEventListener('kopikita_state_updated', handleStorageUpdate);
     };

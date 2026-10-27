@@ -94,8 +94,10 @@ public class CoffeeRepository {
         // Convert cart items to order items
         List<OrderItem> items = new ArrayList<>();
         for (CartItem ci : cart.getCartItems()) {
+            String pId = ci.getProduct().getId();
+            boolean isUuid = pId != null && pId.matches("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$");
             OrderItem oi = new OrderItem(
-                    ci.getProduct().getId(),
+                    isUuid ? pId : null,
                     ci.getProduct().getName(),
                     ci.getQuantity(),
                     ci.getUnitPrice(),
@@ -203,13 +205,14 @@ public class CoffeeRepository {
 
     public static List<Product> getSeedProducts() {
         List<Product> list = new ArrayList<>();
-        list.add(new Product("prod-001", "Es Kopi Susu Senja", "Es Kopi", 18000, "Espresso + Fresh Milk + Organic Aren aren palm syrup, slow extracted dark roast", null, true, 85));
-        list.add(new Product("prod-002", "Hot Oat Cappuccino", "Hot Brew", 26000, "Gayo Honey Roast + Creamy Oatside microfoam rosette latte art", null, true, 42));
-        list.add(new Product("prod-003", "Manual Brew V60 Flores", "Manual Brew", 32000, "Single origin filter extraction with notes of Jasmine, Peach & Honey", null, true, 28));
-        list.add(new Product("prod-004", "Almond Croissant Toast", "Artisan Bakery", 28000, "Flaky French butter pastry topped with roasted sliced almonds", null, true, 19));
-        list.add(new Product("prod-005", "Es Kopi Pandan Skena", "Es Kopi", 22000, "Double shot arabica blend with fresh pandan suji extract and condensed milk", null, true, 50));
-        list.add(new Product("prod-006", "Matcha Ceremonial Latte", "Non-Coffee", 27000, "Artisanal Uji Kyoto ceremonial matcha whisked fresh with oat milk", null, true, 34));
-        list.add(new Product("prod-007", "Earl Grey Choco Scone", "Artisan Bakery", 25000, "English bergamot black tea infusion with 70% dark Belgian chocolate", null, true, 15));
+        list.add(new Product("3d48f3d5-90c4-40b6-aaad-ec1c7998aad7", "Es Kopi Susu Senja", "Es Kopi", 18000, "Espresso + Fresh Milk + Organic Aren aren palm syrup, slow extracted dark roast", "/images/products/es_kopi_susu_senja.png", true, 85));
+        list.add(new Product("59c73949-23e3-4bb5-b518-a4ec1a92a65e", "Hot Oat Cappuccino", "Hot Brew", 26000, "Gayo Honey Roast + Creamy Oatside microfoam rosette latte art", "/images/products/hot_oat_cappuccino.png", true, 42));
+        list.add(new Product("08846906-75a1-4e62-8a08-c384e8848836", "Manual Brew V60 Flores", "Manual Brew", 32000, "Single origin filter extraction with notes of Jasmine, Peach & Honey", "/images/products/manual_brew_v60_flores.png", true, 28));
+        list.add(new Product("e5f13434-70f0-405b-a6d5-8826de7aa538", "Almond Croissant Toast", "Artisan Bakery", 28000, "Flaky French butter pastry topped with roasted sliced almonds", "/images/products/almond_croissant_toast.png", true, 19));
+        list.add(new Product("98386d1e-6149-42e4-9c10-6a5a7e89fcb6", "Es Kopi Pandan Skena", "Es Kopi", 22000, "Double shot arabica blend with fresh pandan suji extract and condensed milk", "/images/products/es_kopi_pandan_skena.png", true, 50));
+        list.add(new Product("e9983033-7735-416f-9642-6ef78c2c7373", "Matcha Ceremonial Latte", "Non-Coffee", 27000, "Artisanal Uji Kyoto ceremonial matcha whisked fresh with oat milk", "/images/products/matcha_ceremonial_latte.png", true, 34));
+        list.add(new Product("1b5f0c3e-2185-4cd5-a2c9-2bb1220057e1", "Cold Brew White Velvet", "Es Kopi", 24000, "Steeped 18 hours in stone roastery with sweet vanilla cream float", "/images/products/cold_brew_white_velvet.png", true, 20));
+        list.add(new Product("7817da88-96c3-4b50-8f75-85e259a91fae", "Earl Grey Choco Scone", "Artisan Bakery", 25000, "English bergamot black tea infusion with 70% dark Belgian chocolate", "/images/products/earl_grey_choco_scone.png", true, 15));
         return list;
     }
 }

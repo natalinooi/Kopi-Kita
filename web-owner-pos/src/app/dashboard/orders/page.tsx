@@ -61,7 +61,7 @@ export default function KitchenKanbanPage() {
       loadOrders();
     });
 
-    // Supabase Realtime Subscription on public.orders
+    // Supabase Realtime Subscription on public.orders & public.order_items
     let channel: ReturnType<typeof supabase.channel> | null = null;
     if (isSupabaseConfigured) {
       try {
@@ -73,7 +73,16 @@ export default function KitchenKanbanPage() {
             (payload) => {
               if (payload.eventType === 'INSERT') {
                 playChime();
+                // Schedule follow-up reload to allow order_items to settle
+                setTimeout(() => loadOrders(), 400);
               }
+              loadOrders();
+            }
+          )
+          .on(
+            'postgres_changes',
+            { event: '*', schema: 'public', table: 'order_items' },
+            () => {
               loadOrders();
             }
           )
@@ -83,7 +92,13 @@ export default function KitchenKanbanPage() {
       }
     }
 
+    // Polling fallback every 6 seconds to ensure kitchen screen always stays in sync
+    const pollInterval = setInterval(() => {
+      loadOrders();
+    }, 6000);
+
     return () => {
+      clearInterval(pollInterval);
       unsubStore();
       if (channel) {
         supabase.removeChannel(channel);

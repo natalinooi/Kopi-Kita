@@ -1,25 +1,27 @@
 import { createClient } from '@supabase/supabase-js';
 import { Order, OrderItem, Product } from '@/types/database.types';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const DEFAULT_SUPABASE_URL = 'https://dwlspyjbfsrhxrsqhoyc.supabase.co';
+const DEFAULT_SUPABASE_ANON_KEY = 'sb_publishable_zWlfg4asiwO2MdB1Cz6Vlg_qffsDPPg';
 
-// Validate whether a custom, live Supabase project is configured
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || DEFAULT_SUPABASE_URL;
+const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+  DEFAULT_SUPABASE_ANON_KEY;
+
+// Validate whether live Supabase project is configured
 export const isSupabaseConfigured = Boolean(
   supabaseUrl &&
   supabaseAnonKey &&
-  !supabaseUrl.includes('your-project-id') &&
-  !supabaseUrl.includes('demo-kopi-kita') &&
-  !supabaseAnonKey.includes('dummy_anon_key')
+  supabaseUrl.startsWith('http') &&
+  !supabaseUrl.includes('your-project-id')
 );
 
-// Fallback URL to prevent createClient crashes if env vars are completely empty
-const safeUrl = supabaseUrl && supabaseUrl.startsWith('http') 
-  ? supabaseUrl 
-  : 'https://placeholder-kopi-kita.supabase.co';
-const safeKey = supabaseAnonKey || 'placeholder-key';
+export const isValidUuid = (val?: string | null): boolean =>
+  Boolean(val && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(val));
 
-export const supabase = createClient(safeUrl, safeKey, {
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
@@ -31,10 +33,10 @@ export const supabase = createClient(safeUrl, safeKey, {
   },
 });
 
-// Initial Seed Products
+// Initial Seed Products (with exact live Supabase UUIDs)
 export const SEED_PRODUCTS: Product[] = [
   {
-    id: 'prod-001',
+    id: '3d48f3d5-90c4-40b6-aaad-ec1c7998aad7',
     name: 'Es Kopi Susu Senja',
     category: 'Es Kopi',
     price: 18000,
@@ -45,7 +47,7 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-002',
+    id: '59c73949-23e3-4bb5-b518-a4ec1a92a65e',
     name: 'Hot Oat Cappuccino',
     category: 'Hot Brew',
     price: 26000,
@@ -56,7 +58,7 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-003',
+    id: '08846906-75a1-4e62-8a08-c384e8848836',
     name: 'Manual Brew V60 Flores',
     category: 'Manual Brew',
     price: 32000,
@@ -67,7 +69,7 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-004',
+    id: 'e5f13434-70f0-405b-a6d5-8826de7aa538',
     name: 'Almond Croissant Toast',
     category: 'Artisan Bakery',
     price: 28000,
@@ -78,7 +80,7 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-005',
+    id: '98386d1e-6149-42e4-9c10-6a5a7e89fcb6',
     name: 'Es Kopi Pandan Skena',
     category: 'Es Kopi',
     price: 22000,
@@ -89,7 +91,7 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-006',
+    id: 'e9983033-7735-416f-9642-6ef78c2c7373',
     name: 'Matcha Ceremonial Latte',
     category: 'Non-Coffee',
     price: 27000,
@@ -100,18 +102,18 @@ export const SEED_PRODUCTS: Product[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-007',
+    id: '1b5f0c3e-2185-4cd5-a2c9-2bb1220057e1',
     name: 'Cold Brew White Velvet',
     category: 'Es Kopi',
     price: 24000,
     description: 'Steeped 18 hours in stone roastery with sweet vanilla cream float',
     image_url: '/images/products/cold_brew_white_velvet.png',
-    is_available: false, // demonstrates out of stock state!
-    stock_count: 0,
+    is_available: true,
+    stock_count: 20,
     created_at: new Date().toISOString(),
   },
   {
-    id: 'prod-008',
+    id: '7817da88-96c3-4b50-8f75-85e259a91fae',
     name: 'Earl Grey Choco Scone',
     category: 'Artisan Bakery',
     price: 25000,
@@ -404,7 +406,7 @@ class KopiKitaStore {
   }
 
   async updateOrderStatus(orderId: string, status: Order['status']): Promise<boolean> {
-    if (isSupabaseConfigured) {
+    if (isSupabaseConfigured && isValidUuid(orderId)) {
       try {
         await supabase
           .from('orders')
@@ -467,7 +469,7 @@ class KopiKitaStore {
         if (!orderErr && insertedOrder) {
           const itemsPayload = items.map((item) => ({
             order_id: insertedOrder.id,
-            product_id: item.product_id,
+            product_id: isValidUuid(item.product_id) ? item.product_id : null,
             product_name: item.product_name,
             quantity: item.quantity,
             unit_price: item.unit_price,
@@ -475,10 +477,15 @@ class KopiKitaStore {
             size: item.size,
             temperature: item.temperature,
             sugar_level: item.sugar_level,
-            customization_notes: item.customization_notes,
+            customization_notes: item.customization_notes || null,
           }));
-          await supabase.from('order_items').insert(itemsPayload);
+          const { error: lineErr } = await supabase.from('order_items').insert(itemsPayload);
+          if (lineErr) {
+            console.error('Failed to insert order_items:', lineErr);
+          }
           completeOrder.id = insertedOrder.id;
+        } else if (orderErr) {
+          console.error('Supabase order insert error:', orderErr);
         }
       } catch (err) {
         console.warn('Supabase createOrder failed, keeping local copy:', err);
