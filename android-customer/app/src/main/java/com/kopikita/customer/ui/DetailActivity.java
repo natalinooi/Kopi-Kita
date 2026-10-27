@@ -49,7 +49,18 @@ public class DetailActivity extends AppCompatActivity {
 
         binding.tvDetailTitle.setText(product.getName());
         binding.tvDetailDesc.setText(product.getDescription() != null ? product.getDescription() : "Artisanal signature roastery.");
-    }
+
+        // Bind artisanal photography to hero image
+        String resKey = "img_" + product.getName().toLowerCase().replaceAll("[^a-z0-9]", "_");
+        int resId = getResources().getIdentifier(resKey, "drawable", getPackageName());
+        if (resId != 0) {
+            binding.imgHeroCup.setImageResource(resId);
+            binding.imgHeroCup.setLayoutParams(new android.widget.FrameLayout.LayoutParams(
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                    android.view.ViewGroup.LayoutParams.MATCH_PARENT
+            ));
+            binding.imgHeroCup.setScaleType(android.widget.ImageView.ScaleType.CENTER_CROP);
+        }
 
     private void setupToolbar() {
         binding.toolbarDetail.setNavigationOnClickListener(v -> finish());

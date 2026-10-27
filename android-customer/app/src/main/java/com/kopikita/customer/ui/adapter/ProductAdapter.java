@@ -65,6 +65,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             binding.tvProductPrice.setText(RupiahFormatter.format(product.getPrice()));
             binding.tvCategoryBadge.setText(product.getCategory());
 
+            // Bind artisanal product photography
+            String resKey = "img_" + product.getName().toLowerCase().replaceAll("[^a-z0-9]", "_");
+            int resId = itemView.getContext().getResources().getIdentifier(resKey, "drawable", itemView.getContext().getPackageName());
+            if (resId != 0) {
+                binding.imgProduct.setImageResource(resId);
+                binding.imgProduct.setLayoutParams(new android.widget.FrameLayout.LayoutParams(
+                        android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                        android.view.ViewGroup.LayoutParams.MATCH_PARENT
+                ));
+                binding.imgProduct.setScaleType(android.widget.ImageView.ScaleType.CENTER_CROP);
+            } else {
+                binding.imgProduct.setImageResource(com.kopikita.customer.R.drawable.ic_coffee_cup);
+            }
+
             itemView.setOnClickListener(v -> {
                 if (listener != null) {
                     listener.onProductClick(product);
