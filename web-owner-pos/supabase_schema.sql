@@ -112,34 +112,35 @@ end $$;
 
 -- Initial Seed Data: Products (Inserted safely without duplicates)
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Es Kopi Susu Senja', 'Es Kopi', 18000, 'Espresso + Fresh Milk + Organic Aren aren palm syrup and creamy cold milk', '/images/07_artisanal_photo_es_kopi_susu_senja.png', true, 85
+select 'Es Kopi Susu Senja', 'Es Kopi', 18000, 'Espresso + Fresh Milk + Organic Aren aren palm syrup and creamy cold milk', '/images/products/es_kopi_susu_senja.png', true, 85
 where not exists (select 1 from public.products where name = 'Es Kopi Susu Senja');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Hot Oat Cappuccino', 'Hot Brew', 26000, 'Gayo Honey Roast + Creamy Oatside microfoam rosette', '/images/06_explore_and_menu_catalog.jpg', true, 42
+select 'Hot Oat Cappuccino', 'Hot Brew', 26000, 'Gayo Honey Roast + Creamy Oatside microfoam rosette', '/images/products/hot_oat_cappuccino.png', true, 42
 where not exists (select 1 from public.products where name = 'Hot Oat Cappuccino');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Manual Brew V60 Flores', 'Manual Brew', 32000, 'Single origin notes of Jasmine, Peach & Wildflower Honey', '/images/03_slow_bar_menu_and_customizer.png', true, 28
+select 'Manual Brew V60 Flores', 'Manual Brew', 32000, 'Single origin notes of Jasmine, Peach & Wildflower Honey', '/images/products/manual_brew_v60_flores.png', true, 28
 where not exists (select 1 from public.products where name = 'Manual Brew V60 Flores');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Almond Croissant Toast', 'Artisan Bakery', 28000, 'Flaky French butter pastry topped with roasted sliced almonds', '/images/04_brew_tray_and_order_checkout.png', true, 19
+select 'Almond Croissant Toast', 'Artisan Bakery', 28000, 'Flaky French butter pastry topped with roasted sliced almonds', '/images/products/almond_croissant_toast.png', true, 19
 where not exists (select 1 from public.products where name = 'Almond Croissant Toast');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Es Kopi Pandan Skena', 'Es Kopi', 22000, 'Double shot arabica with fresh daun suji pandan extract', '/images/02_discover_and_daily_roast.jpg', true, 50
+select 'Es Kopi Pandan Skena', 'Es Kopi', 22000, 'Double shot arabica with fresh daun suji pandan extract', '/images/products/es_kopi_pandan_skena.png', true, 50
 where not exists (select 1 from public.products where name = 'Es Kopi Pandan Skena');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Matcha Ceremonial Latte', 'Non-Coffee', 27000, 'Artisanal Uji Kyoto matcha whisked fresh with oat milk', '/images/09_product_detail_and_cup_customizer.png', true, 34
+select 'Matcha Ceremonial Latte', 'Non-Coffee', 27000, 'Artisanal Uji Kyoto matcha whisked fresh with oat milk', '/images/products/matcha_ceremonial_latte.png', true, 34
 where not exists (select 1 from public.products where name = 'Matcha Ceremonial Latte');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Cold Brew White Velvet', 'Es Kopi', 24000, 'Steeped 18 hours in stone roastery with sweet vanilla cream float', '/images/10_pesanan_and_checkout.png', true, 20
+select 'Cold Brew White Velvet', 'Es Kopi', 24000, 'Steeped 18 hours in stone roastery with sweet vanilla cream float', '/images/products/cold_brew_white_velvet.png', true, 20
 where not exists (select 1 from public.products where name = 'Cold Brew White Velvet');
 
 insert into public.products (name, category, price, description, image_url, is_available, stock_count)
-select 'Earl Grey Choco Scone', 'Artisan Bakery', 25000, 'English bergamot infusion with 70% dark Belgian chocolate', '/images/05_roastery_club_and_passport.png', true, 15
+select 'Earl Grey Choco Scone', 'Artisan Bakery', 25000, 'English bergamot infusion with 70% dark Belgian chocolate', '/images/products/earl_grey_choco_scone.png', true, 15
 where not exists (select 1 from public.products where name = 'Earl Grey Choco Scone');
+
 
